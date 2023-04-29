@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class WorldScrolling : MonoBehaviour
 {
-    public Transform playerTransform;
+    
     public int terrainTileHorizontalCount;
     public int terrainTileVerticalCount;
 
@@ -22,9 +22,12 @@ public class WorldScrolling : MonoBehaviour
     public int fieldOfVisionHeight;
 
 
+    private Transform playerTransform;
+
     private void Start()
     {
         UpdateTilesOnScreen();
+        playerTransform = GameManager.instance.playerTransform;
     }
 
     private void Update()

@@ -6,12 +6,20 @@ using UnityEngine;
 public class EnemiesManager : MonoBehaviour
 {
     public GameObject enemy;
-    public Transform player;
-    public Character playerCharacter;
     public Vector2 spawnArea;
     public float spawnTimer;
 
+
+    private GameObject player;
+    private Character playerCharacter;
+
     float timer;
+
+    private void Start()
+    {
+        player = GameManager.instance.playerTransform.gameObject;
+        playerCharacter = GameManager.instance.playerCharacter;
+    }
 
     private void Update()
     {

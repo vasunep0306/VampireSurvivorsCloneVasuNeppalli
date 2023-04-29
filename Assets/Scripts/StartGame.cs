@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
+    public string sceneName = "GameplaySceneStage1";
    public void StartGameplay()
     {
-        SceneManager.LoadScene("GameplayScene");
+        SceneManager.LoadScene("Essential", LoadSceneMode.Single);
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
     }
 }
