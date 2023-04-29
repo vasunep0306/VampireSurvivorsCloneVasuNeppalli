@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class ExitToMenu : MonoBehaviour
 {
-   public void BackToMenu()
+
+    /// <summary>
+    /// Loads the main menu scene.
+    /// </summary>
+    public void BackToMenu()
     {
         SceneManager.LoadScene("MainMenu");
     }
