@@ -16,6 +16,12 @@ public class MusicManager : MonoBehaviour
         Play(musicOnStart, true);
     }
 
+
+    /// <summary>
+    /// Plays the specified music clip, with the option to interrupt any currently playing music.
+    /// </summary>
+    /// <param name="music">The music clip to play.</param>
+    /// <param name="interrupt">Whether or not to interrupt any currently playing music.</param>
     public void Play(AudioClip music, bool interrupt = false)
     {
         if(interrupt)
@@ -32,7 +38,10 @@ public class MusicManager : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Smoothly switches from the current music to the new music clip.
+    /// </summary>
+    /// <returns>An IEnumerator object for the coroutine.</returns>
     IEnumerator SmoothSwitchMusic()
     {
         volume = 1f;
