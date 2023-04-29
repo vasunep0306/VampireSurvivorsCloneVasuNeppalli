@@ -13,13 +13,23 @@ public class MusicManager : MonoBehaviour
 
     private void Start()
     {
-        Play(musicOnStart);
+        Play(musicOnStart, true);
     }
 
-    public void Play(AudioClip music)
+    public void Play(AudioClip music, bool interrupt = false)
     {
-        switchTo = music;
-        StartCoroutine(SmoothSwitchMusic());
+        if(interrupt)
+        {
+            volume = 1f;
+            audioSource.volume = volume;
+            audioSource.clip = music;
+            audioSource.Play();
+        }
+        else
+        {
+            switchTo = music;
+            StartCoroutine(SmoothSwitchMusic());
+        }
     }
 
 
@@ -33,8 +43,6 @@ public class MusicManager : MonoBehaviour
             audioSource.volume = volume;
             yield return new WaitForEndOfFrame();
         }
-        audioSource.volume = volume;
-        audioSource.clip = switchTo;
-        audioSource.Play();
+        Play(switchTo, true);
     }
 }

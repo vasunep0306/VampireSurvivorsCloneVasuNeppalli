@@ -2273,6 +2273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicOnStart: {fileID: 8300000, guid: 13e1df212c22ef84aa3830e33e578bfd, type: 3}
   audioSource: {fileID: 1027769878}
+  timeToSwitch: 5
 --- !u!4 &1056922893 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1557552849133517371, guid: 017e13d894962a244ae71a768269c977, type: 3}
