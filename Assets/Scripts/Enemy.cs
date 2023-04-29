@@ -24,6 +24,12 @@ public class Enemy : MonoBehaviour, IDamagable
         rb = GetComponent<Rigidbody2D>();
     }
 
+
+    /// <summary>
+    /// Sets the target destination and character for a given object.
+    /// </summary>
+    /// <param name="destination">The Transform of the target destination.</param>
+    /// <param name="character">The Character object associated with the target destination.</param>
     public void SetTarget(Transform destination, Character character)
     {
         targetDestination = destination;
@@ -47,11 +53,18 @@ public class Enemy : MonoBehaviour, IDamagable
 
     }
 
+    /// <summary>
+    /// Inflicts damage to the target character object.
+    /// </summary>
     private void Attack()
     {
         targetCharacter.TakeDamage(damage);
     }
 
+    /// <summary>
+    /// Applies damage to the object's health points and checks if the object is destroyed.
+    /// </summary>
+    /// <param name="damage">The amount of damage to apply to the object's health points.</param>
     public void TakeDamage(int damage)
     {
         hp -= damage;

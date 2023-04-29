@@ -14,6 +14,10 @@ public class DropAndDestroy : MonoBehaviour
         isQuitting = true;
     }
 
+
+    /// <summary>
+    /// Determines whether an item should be dropped based on the configured drop chance, and instantiates a drop item prefab if the drop chance is successful.
+    /// </summary>
     public void CheckDrop()
     {
         if(isQuitting) { return; }

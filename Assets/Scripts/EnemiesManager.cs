@@ -23,6 +23,9 @@ public class EnemiesManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Spawns an enemy game object at a randomly generated position and sets the player as the enemy's target.
+    /// </summary>
     private void SpawnEnemy()
     {
         Vector3 position = GenerateRandomPosition();
@@ -33,6 +36,11 @@ public class EnemiesManager : MonoBehaviour
         newEnemy.transform.parent = transform;
     }
 
+
+    /// <summary>
+    /// Generates a random position within a defined spawn area.
+    /// </summary>
+    /// <returns>A Vector3 representing the generated random position.</returns>
     private Vector3 GenerateRandomPosition()
     {
         Vector3 position= new Vector3();
