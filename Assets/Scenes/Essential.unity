@@ -3134,4 +3134,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponObjectsContainer: {fileID: 2753633733468743785}
-  startingWeapon: {fileID: 11400000, guid: d03576ed5dfa6d343879e405615a19bf, type: 2}
+  startingWeapon: {fileID: 11400000, guid: b8a9c11a4b909ad49b8ce880096d6913, type: 2}
