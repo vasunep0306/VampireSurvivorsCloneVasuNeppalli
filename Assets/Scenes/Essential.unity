@@ -3996,13 +3996,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1666400713}
     - target: {fileID: 653925994, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
+      propertyPath: weaponManager
+      value: 
+      objectReference: {fileID: 2753633733468743787}
+    - target: {fileID: 653925994, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
       propertyPath: upgrades.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 653925994, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
       propertyPath: upgrades.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 94d2da1bc9915424d9d0f2e4ee4a6153, type: 2}
+      objectReference: {fileID: 11400000, guid: 6bf02894c4f7b14449688357bf4f7e98, type: 2}
     - target: {fileID: 653925994, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
       propertyPath: upgrades.Array.data[1]
       value: 
@@ -4011,6 +4015,10 @@ PrefabInstance:
       propertyPath: upgrades.Array.data[2]
       value: 
       objectReference: {fileID: 11400000, guid: 54a0ad30c8bb8b64eafeb24ca7522019, type: 2}
+    - target: {fileID: 653925994, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
+      propertyPath: upgrades.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6bf02894c4f7b14449688357bf4f7e98, type: 2}
     - target: {fileID: 653925999, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
       propertyPath: coinText
       value: 

@@ -9,6 +9,7 @@ public class Level : MonoBehaviour
     public UpgradePanelManager upm;
     private int level = 1;
     private int experience = 0;
+    public WeaponManager weaponManager;
 
     public List<UpgradeData> upgrades;
     List<UpgradeData> selectedUpgrades;
@@ -26,6 +27,11 @@ public class Level : MonoBehaviour
     {
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
         experienceBar.SetLevelText(level);
+    }
+
+    public void AddUpgradableToListOfAllAvailableUpgrades(List<UpgradeData> upgradesToAdd)
+    {
+        this.upgrades.AddRange(upgradesToAdd);
     }
 
 
@@ -92,6 +98,19 @@ public class Level : MonoBehaviour
     {
         UpgradeData upgradeData = selectedUpgrades[selectedUpgradeId];
         if (acquiredUpgrades == null) { acquiredUpgrades = new List<UpgradeData>(); }
+
+       switch(upgradeData.upgradeType)
+        {
+            case UpgradeType.WeaponUpgrade:
+                break;
+            case UpgradeType.ItemUpgrade:
+                break;
+            case UpgradeType.WeaponUnlock:
+                weaponManager.AddWeapon(upgradeData.weaponData);
+                break;
+            case UpgradeType.ItemUnlock:
+                break;
+        }
 
         acquiredUpgrades.Add(upgradeData);
         upgrades.Remove(upgradeData);
