@@ -15,6 +15,11 @@ public class WhipWeapon : MonoBehaviour
    
     private float timer;
 
+    private void Awake()
+    {
+        if (playerMove == null) { playerMove = GetComponentInParent<PlayerMove>(); }
+    }
+
     private void Update()
     {
         timer -= Time.deltaTime;

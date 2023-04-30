@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96e5f26574188454da42de0c075b6272, type: 3}
-  m_Name: WeaponsData
+  m_Name: Throwing Knife
   m_EditorClassIdentifier: 
-  Name: Weapon1
+  Name: Thowing Knife
   stats:
-    damage: 0
-    timeToAttack: 0
-  weaponBasePrefab: {fileID: 0}
+    damage: 100
+    timeToAttack: 2
+  weaponBasePrefab: {fileID: 4115335639641461503, guid: fbb53bdd25bf05540a0c9f3244f65c4a, type: 3}
