@@ -8,6 +8,12 @@ public class WeaponsStats
 {
     public int damage;
     public float timeToAttack;
+
+    public WeaponsStats(int damage, float timeToAttack)
+    {
+        this.damage = damage;
+        this.timeToAttack = timeToAttack;
+    }
 }
 
 [CreateAssetMenu]

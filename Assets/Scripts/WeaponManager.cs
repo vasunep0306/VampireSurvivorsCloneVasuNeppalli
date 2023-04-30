@@ -16,6 +16,6 @@ public class WeaponManager : MonoBehaviour
     {
         GameObject weaponGameObject = Instantiate(weaponData.weaponBasePrefab, weaponObjectsContainer);
 
-
+        weaponGameObject.GetComponent<WeaponBase>().SetData(weaponData);
     }
 }
