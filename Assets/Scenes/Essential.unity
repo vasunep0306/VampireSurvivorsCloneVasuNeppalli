@@ -1666,7 +1666,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 45510072456874683, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
   m_PrefabInstance: {fileID: 2753633733468743784}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2753633733468743786}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6829fddaa3ab88c4a979645e54657a29, type: 3}
@@ -3995,54 +3995,14 @@ PrefabInstance:
       propertyPath: experienceBar
       value: 
       objectReference: {fileID: 1666400713}
-    - target: {fileID: 653925994, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
-      propertyPath: weaponManager
-      value: 
-      objectReference: {fileID: 2753633733468743787}
-    - target: {fileID: 653925994, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
-      propertyPath: upgrades.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 653925994, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
-      propertyPath: upgrades.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 6bf02894c4f7b14449688357bf4f7e98, type: 2}
-    - target: {fileID: 653925994, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
-      propertyPath: upgrades.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: e7d996755ef20474b883a02f4b5b474d, type: 2}
-    - target: {fileID: 653925994, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
-      propertyPath: upgrades.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 54a0ad30c8bb8b64eafeb24ca7522019, type: 2}
-    - target: {fileID: 653925994, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
-      propertyPath: upgrades.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 6bf02894c4f7b14449688357bf4f7e98, type: 2}
     - target: {fileID: 653925999, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
       propertyPath: coinText
       value: 
       objectReference: {fileID: 628934631}
-    - target: {fileID: 653926000, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 653926000, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
-      propertyPath: items.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 653926001, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 27513700}
-    - target: {fileID: 2084087883, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 45510072456874683, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
-      propertyPath: currentHp
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 2753633733442881713, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4093,27 +4053,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
---- !u!4 &2753633733468743785 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7014386827953869345, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
-  m_PrefabInstance: {fileID: 2753633733468743784}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2753633733468743786 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2753633733442881726, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
-  m_PrefabInstance: {fileID: 2753633733468743784}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2753633733468743787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2753633733468743786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2010a67ca1f47b842bdeb54dc5284bec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponObjectsContainer: {fileID: 2753633733468743785}
-  startingWeapon: {fileID: 11400000, guid: d03576ed5dfa6d343879e405615a19bf, type: 2}
