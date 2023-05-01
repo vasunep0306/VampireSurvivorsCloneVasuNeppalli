@@ -3995,6 +3995,10 @@ PrefabInstance:
       propertyPath: experienceBar
       value: 
       objectReference: {fileID: 1666400713}
+    - target: {fileID: 653925994, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
+      propertyPath: upgrades.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 653925999, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
       propertyPath: coinText
       value: 
