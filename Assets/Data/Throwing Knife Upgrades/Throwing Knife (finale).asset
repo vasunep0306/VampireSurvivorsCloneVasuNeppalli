@@ -16,3 +16,6 @@ MonoBehaviour:
   Name: Chaotic
   icon: {fileID: 1944517653, guid: 5be80a9400542ed4fb8ded2adce66d03, type: 3}
   weaponData: {fileID: 11400000, guid: b8a9c11a4b909ad49b8ce880096d6913, type: 2}
+  weaponUpgradeStats:
+    damage: 500
+    timeToAttack: -6

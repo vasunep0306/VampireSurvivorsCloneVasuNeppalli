@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Thowing Knife
   stats:
     damage: 100
-    timeToAttack: 2
+    timeToAttack: 10
   weaponBasePrefab: {fileID: 4115335639641461503, guid: fbb53bdd25bf05540a0c9f3244f65c4a, type: 3}
   upgrades:
   - {fileID: 11400000, guid: 6cb8a5209a8bd2147a980fcc00b5dc91, type: 2}
