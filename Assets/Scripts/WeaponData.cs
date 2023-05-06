@@ -8,11 +8,13 @@ public class WeaponsStats
 {
     public int damage;
     public float timeToAttack;
+    public int numberOfAttacks;
 
-    public WeaponsStats(int damage, float timeToAttack)
+    public WeaponsStats(int damage, float timeToAttack, int numberOfAttacks)
     {
         this.damage = damage;
         this.timeToAttack = timeToAttack;
+        this.numberOfAttacks = numberOfAttacks;
     }
 
     /// <summary>
@@ -23,6 +25,7 @@ public class WeaponsStats
     {
         this.damage += weaponUpgradeStats.damage;
         this.timeToAttack += weaponUpgradeStats.timeToAttack;
+        this.numberOfAttacks += weaponUpgradeStats.numberOfAttacks;
     }
 }
 

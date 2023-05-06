@@ -11,9 +11,16 @@ public class ThrowingKnifeProjectile : MonoBehaviour
     private bool hitDetected = false;
     private Vector3 direction;
 
+    private float ttl = 6f;
 
-   
-
+    /// <summary>
+    /// Sets the direction of the projectile based on the given x and y values.
+    /// </summary>
+    /// <param name="dir_x">The x component of the direction.</param>
+    /// <param name="dir_y">The y component of the direction.</param>
+    /// <remarks>
+    /// If the x component is negative, the projectile is flipped horizontally and rotated by 180 degrees.
+    /// </remarks>
     public void SetDirection(float dir_x, float dir_y)
     {
         direction = new Vector3(dir_x, dir_y);
@@ -32,9 +39,11 @@ public class ThrowingKnifeProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Move the projectile in the direction and speed given, check for collisions with enemies every 6 frames, and destroy the projectile if an enemy is hit
+        transform.position += direction * speed * Time.deltaTime;
+
         if (Time.frameCount % 6 == 0)
         {
-            transform.position += direction * speed * Time.deltaTime;
             Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, overlapCircle);
             foreach (Collider2D c in hit)
             {
@@ -50,6 +59,12 @@ public class ThrowingKnifeProjectile : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+        }
+        // Decrease the time to live (ttl) by the elapsed time and destroy the game object if ttl is less than zero
+        ttl -= Time.deltaTime;
+        if (ttl < 0f)
+        {
+            Destroy(gameObject);
         }
     }
 }
