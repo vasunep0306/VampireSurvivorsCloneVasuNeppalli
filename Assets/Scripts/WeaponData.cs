@@ -15,6 +15,10 @@ public class WeaponsStats
         this.timeToAttack = timeToAttack;
     }
 
+    /// <summary>
+    /// Adds the values of the weapon upgrade stats to the current weapon stats.
+    /// </summary>
+    /// <param name="weaponUpgradeStats">The weapon upgrade stats to be added.</param>
     public void Sum(WeaponsStats weaponUpgradeStats)
     {
         this.damage += weaponUpgradeStats.damage;

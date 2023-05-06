@@ -48,6 +48,10 @@ public class WorldScrolling : MonoBehaviour
         }
     }
 
+
+    /// <summary>
+    /// Updates the position and appearance of the tiles on the screen based on the player's position and field of vision.
+    /// </summary>
     private void UpdateTilesOnScreen()
     {
 
@@ -75,11 +79,25 @@ public class WorldScrolling : MonoBehaviour
         }
     }
 
+
+    /// <summary>
+    /// Calculates the world position of a tile based on its grid coordinates and tile size.
+    /// </summary>
+    /// <param name="x">The x coordinate of the tile.</param>
+    /// <param name="y">The y coordinate of the tile.</param>
+    /// <returns>A Vector3 representing the world position of the tile.</returns>
     private Vector3 CalculatePosition(int x, int y)
     {
         return new Vector3(x * tileSize, y * tileSize, 0f); 
     }
 
+
+    /// <summary>
+    /// Calculates the position of a tile on a given axis based on its current value and the terrain tile count.
+    /// </summary>
+    /// <param name="currentValue">The current value of the tile on the axis.</param>
+    /// <param name="horizontal">A boolean indicating whether the axis is horizontal or vertical.</param>
+    /// <returns>An integer representing the position of the tile on the axis.</returns>
     private int CalculatePositionOnAxis(float currentValue, bool horizontal)
     {
         if(horizontal)
@@ -113,6 +131,14 @@ public class WorldScrolling : MonoBehaviour
         terrainTiles = new GameObject[terrainTileHorizontalCount, terrainTileVerticalCount];
     }
 
+
+
+
+    /// <summary>
+    /// Adds a game object to the terrain tiles array at a given position.
+    /// </summary>
+    /// <param name="tileGameObject">The game object to be added.</param>
+    /// <param name="tilePosition">The position of the tile in the array.</param>
     public void Add(GameObject tileGameObject, Vector2Int tilePosition)
     {
         terrainTiles[tilePosition.x, tilePosition.y] = tileGameObject;
