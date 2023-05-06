@@ -27,6 +27,10 @@ public class UpgradePanelManager : MonoBehaviour
         panel.SetActive(false);
     }
 
+
+    /// <summary>
+    /// Hides all the upgrade buttons in the list by setting their active state to false.
+    /// </summary>
     private void HideButtons()
     {
         for (int i = 0; i < upgradeButtons.Count; i++)
@@ -53,7 +57,9 @@ public class UpgradePanelManager : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Cleans all the upgrade buttons in the list.
+    /// </summary>
     public void Clean()
     {
         for (int i = 0; i < upgradeButtons.Count; i++)
@@ -62,6 +68,10 @@ public class UpgradePanelManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Upgrades the player's level based on the pressed button ID.
+    /// </summary>
+    /// <param name="pressButtonId">The ID of the button that was pressed.</param>
     public void Upgrade(int pressButtonId)
     {
         GameManager.instance.playerTransform.GetComponent<Level>().Upgrade(pressButtonId);

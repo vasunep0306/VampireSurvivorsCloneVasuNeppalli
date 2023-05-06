@@ -6,6 +6,11 @@ public class StatusBar : MonoBehaviour
 {
     public Transform bar;
 
+    /// <summary>
+    /// This method sets the state of the bar by scaling it according to the ratio of current to max value.
+    /// </summary>
+    /// <param name="current">The current value of the status.</param>
+    /// <param name="max">The maximum value of the status.</param>
     public void SetState(int current, int max)
     {
         float state = (float)current;

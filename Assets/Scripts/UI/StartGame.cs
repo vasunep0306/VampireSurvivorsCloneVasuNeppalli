@@ -6,7 +6,11 @@ using UnityEngine.SceneManagement;
 public class StartGame : MonoBehaviour
 {
     public string sceneName = "GameplaySceneStage1";
-   public void StartGameplay()
+
+    /// <summary>
+    /// This method loads the essential scene in single mode and the gameplay scene in additive mode.
+    /// </summary>
+    public void StartGameplay()
     {
         SceneManager.LoadScene("Essential", LoadSceneMode.Single);
         SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
