@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// A class that controls the animation of a game object.
+/// </summary>
 public class Animate : MonoBehaviour
 {
 
