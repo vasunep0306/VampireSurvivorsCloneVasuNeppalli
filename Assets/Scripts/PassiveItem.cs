@@ -19,6 +19,11 @@ public class PassiveItem : MonoBehaviour
         Equip(testArmor);
     }
 
+
+    /// <summary>
+    /// Equips an item to the character and adds it to the list of items.
+    /// </summary>
+    /// <param name="itemToEquip">The item to be equipped.</param>
     public void Equip(Item itemToEquip)
     {
         if(items == null)
