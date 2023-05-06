@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Throwing Knife (Sharp Knife)
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: Sharp Knife
+  Name: Better Grip
   icon: {fileID: 1944517653, guid: 5be80a9400542ed4fb8ded2adce66d03, type: 3}
   weaponData: {fileID: 11400000, guid: b8a9c11a4b909ad49b8ce880096d6913, type: 2}
+  weaponUpgradeStats:
+    damage: 100
+    timeToAttack: 0

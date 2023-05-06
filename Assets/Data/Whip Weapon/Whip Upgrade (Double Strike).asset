@@ -10,8 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d1b78d7e8a9bb34799273c74db3e69c, type: 3}
-  m_Name: TestUpgrade2
+  m_Name: Whip Upgrade (Double Strike)
   m_EditorClassIdentifier: 
-  upgradeType: 1
-  Name: Test 2
-  icon: {fileID: 1057382519, guid: 5be80a9400542ed4fb8ded2adce66d03, type: 3}
+  upgradeType: 0
+  Name: 
+  icon: {fileID: 0}
+  weaponData: {fileID: 0}
+  weaponUpgradeStats:
+    damage: 0
+    timeToAttack: 0

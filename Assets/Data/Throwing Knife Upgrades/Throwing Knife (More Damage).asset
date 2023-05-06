@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Throwing Knife (More Damage)
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: More Damage
+  Name: More Damange
   icon: {fileID: -542281228, guid: 5be80a9400542ed4fb8ded2adce66d03, type: 3}
   weaponData: {fileID: 11400000, guid: b8a9c11a4b909ad49b8ce880096d6913, type: 2}
+  weaponUpgradeStats:
+    damage: 250
+    timeToAttack: 0
