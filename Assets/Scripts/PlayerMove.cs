@@ -44,6 +44,10 @@ public class PlayerMove : MonoBehaviour
         rb.velocity = movementVector * Time.deltaTime; // In this example, we multiply our movementVector with Time.deltaTime to make our game frame rate independent.
     }
 
+
+    /// <summary>
+    /// Updates the last horizontal and vertical movement values based on the current movement vector.
+    /// </summary>
     private void PopulateLastMovement()
     {
         if (movementVector.x != 0)
