@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 0
   Name: Double Strike
-  icon: {fileID: 0}
+  icon: {fileID: 312801109, guid: 5be80a9400542ed4fb8ded2adce66d03, type: 3}
   weaponData: {fileID: 11400000, guid: d03576ed5dfa6d343879e405615a19bf, type: 2}
   weaponUpgradeStats:
     damage: 150
