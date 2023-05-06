@@ -14,6 +14,9 @@ public class Character : MonoBehaviour
     public Level level;
     public Coins coins;
 
+    public float hpRegenerationRate = 1f;
+    public float hpRegenerationTimer;
+
 
     public GameOver gameOver;
 
@@ -23,6 +26,17 @@ public class Character : MonoBehaviour
     {
         hpBar.SetState(currentHp, maxHp);
         coins.Add(0);
+    }
+
+    private void Update()
+    {
+        hpRegenerationTimer += Time.deltaTime * hpRegenerationRate;
+
+        if(hpRegenerationTimer > 1f)
+        {
+            Heal(1);
+            hpRegenerationTimer -= 1f;
+        }
     }
 
     /// <summary>
