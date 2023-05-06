@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Whip Upgrade (More Damage)
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: 
+  Name: More Damage
   icon: {fileID: 0}
-  weaponData: {fileID: 0}
+  weaponData: {fileID: 11400000, guid: d03576ed5dfa6d343879e405615a19bf, type: 2}
   weaponUpgradeStats:
-    damage: 0
-    timeToAttack: 0
+    damage: 100
+    timeToAttack: 4
