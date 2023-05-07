@@ -13,7 +13,7 @@ public class EnemiesManager : MonoBehaviour
     private GameObject player;
     private Character playerCharacter;
 
-    float timer;
+    //float timer;
 
     private void Start()
     {
@@ -21,20 +21,20 @@ public class EnemiesManager : MonoBehaviour
         playerCharacter = GameManager.instance.playerCharacter;
     }
 
-    private void Update()
-    {
-        timer -= Time.deltaTime;
-        if(timer < 0f)
-        {
-            SpawnEnemy();
-            timer = spawnTimer;
-        }
-    }
+    //private void Update()
+    //{
+    //    timer -= Time.deltaTime;
+    //    if(timer < 0f)
+    //    {
+    //        SpawnEnemy();
+    //        timer = spawnTimer;
+    //    }
+    //}
 
     /// <summary>
     /// Spawns an enemy game object at a randomly generated position and sets the player as the enemy's target.
     /// </summary>
-    private void SpawnEnemy()
+    public void SpawnEnemy()
     {
         Vector3 position = GenerateRandomPosition();
 
