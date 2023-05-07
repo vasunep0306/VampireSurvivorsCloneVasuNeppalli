@@ -5,6 +5,11 @@ using UnityEngine;
 public class PauseManager : MonoBehaviour
 {
 
+    private void Start()
+    {
+        UnpauseGame();
+    }
+
     /// <summary>
     /// Pauses the game by setting the time scale to 0, effectively stopping all time-based game mechanics.
     /// </summary>

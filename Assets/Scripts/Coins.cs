@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Coins : MonoBehaviour
 {
-    public int coinAcquired;
+    public DataContainer data;
     public TMPro.TextMeshProUGUI coinText;
 
 
@@ -14,7 +14,7 @@ public class Coins : MonoBehaviour
     /// <param name="count">The number of coins to be added to the current coin count.</param>
     public void Add(int count)
     {
-        coinAcquired += count;
-        coinText.text = $"COINS: {coinAcquired}";
+        data.coins += count;
+        coinText.text = $"COINS: {data.coins}";
     }
 }
