@@ -1263,6 +1263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1017806078}
   - component: {fileID: 1017806077}
+  - component: {fileID: 1017806079}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -1282,7 +1283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6dcd981c872e8f4b889cac6e47829b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
   terrainTileHorizontalCount: 4
   terrainTileVerticalCount: 3
   playerTilePosition: {x: 0, y: 0}
@@ -1316,6 +1316,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1017806079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017806076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade02def6acc9034dab57b8ab4ad182d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0
 --- !u!4 &1056922893 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1557552849133517371, guid: 017e13d894962a244ae71a768269c977, type: 3}
@@ -1783,8 +1796,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 3913384263121040700, guid: eab692215bbb9564da78539e34767cc0, type: 3}
-  player: {fileID: 0}
-  playerCharacter: {fileID: 0}
   spawnArea: {x: 10, y: 10}
   spawnTimer: 2
 --- !u!4 &1502733609
