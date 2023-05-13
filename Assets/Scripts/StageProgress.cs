@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class StageProgress : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public StageTime stageTime;
+    public float progressTimeRate = 30f;
+    public float progressPerSplit = 0.2f;
+
+    public float Progress
     {
-        
+        get
+        {
+            return 1f + stageTime.time / progressTimeRate * progressPerSplit;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        if(stageTime == null) { stageTime = GetComponent<StageTime>(); }
     }
 }

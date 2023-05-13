@@ -6,8 +6,8 @@ using UnityEngine;
 public class EnemiesManager : MonoBehaviour
 {
     // Declares variables for the enemy game object, its animation, the spawn area size, and the spawn timer duration.
+    public StageProgress stageProgress;
     public GameObject enemy;
-    //public GameObject enemyAnimation;
     public Vector2 spawnArea;
     public float spawnTimer;
 
@@ -46,6 +46,8 @@ public class EnemiesManager : MonoBehaviour
         Enemy newEnemyComponent = newEnemy.GetComponent<Enemy>();
         newEnemyComponent.SetTarget(player.transform, playerCharacter);
         newEnemyComponent.SetStats(enemyToSpawn.stats);
+        newEnemyComponent.UpdateStatsForProgress(stageProgress.Progress);
+
         newEnemy.transform.parent = transform;
 
         // Creates a new sprite object for the enemy animation and makes it a child of the new enemy.

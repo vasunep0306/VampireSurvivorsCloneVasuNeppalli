@@ -19,6 +19,12 @@ public class EnemyStats
         this.experience_reward = stats.experience_reward;
         this.moveSpeed = stats.moveSpeed;
     }
+
+    public void ApplyProgress(float progress)
+    {
+        this.hp = (int)(hp * progress);
+        this.damage = (int)(damage * progress);
+    }
 }
 
 public class Enemy : MonoBehaviour, IDamagable
@@ -58,6 +64,11 @@ public class Enemy : MonoBehaviour, IDamagable
         rb.velocity = direction * Time.deltaTime; // add * Time.deltatime for frame rate independence
     }
 
+    public void UpdateStatsForProgress(float progress)
+    {
+        stats.ApplyProgress(progress);
+    }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject == targetGameObject)
@@ -93,7 +104,6 @@ public class Enemy : MonoBehaviour, IDamagable
             targetGameObject.GetComponent<Level>().AddExperience(stats.experience_reward);
             GetComponent<DropAndDestroy>().CheckDrop();
             Destroy(gameObject);
-
         }
     }
 }
