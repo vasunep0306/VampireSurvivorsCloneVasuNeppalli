@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1b78d7e8a9bb34799273c74db3e69c, type: 3}
   m_Name: Armor Upgrade1
   m_EditorClassIdentifier: 
-  upgradeType: 0
-  Name: 
-  icon: {fileID: 0}
+  upgradeType: 1
+  Name: Armor Upgrade
+  icon: {fileID: -1680827925, guid: 5be80a9400542ed4fb8ded2adce66d03, type: 3}
   weaponData: {fileID: 0}
   weaponUpgradeStats:
     damage: 0
     timeToAttack: 0
     numberOfAttacks: 0
-  item: {fileID: 0}
-  itemstats:
+  item: {fileID: 11400000, guid: 2f3c9845ec99c6c42b7c5f9cac7c3987, type: 2}
+  itemStats:
     armor: 0

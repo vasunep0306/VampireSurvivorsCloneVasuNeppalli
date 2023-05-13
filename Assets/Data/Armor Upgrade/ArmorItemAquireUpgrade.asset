@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ArmorItemAquireUpgrade
   m_EditorClassIdentifier: 
   upgradeType: 3
-  Name: 
+  Name: Armor Get
   icon: {fileID: -1680827925, guid: 5be80a9400542ed4fb8ded2adce66d03, type: 3}
   weaponData: {fileID: 0}
   weaponUpgradeStats:
@@ -21,3 +21,5 @@ MonoBehaviour:
     timeToAttack: 0
     numberOfAttacks: 0
   item: {fileID: 11400000, guid: 2f3c9845ec99c6c42b7c5f9cac7c3987, type: 2}
+  itemStats:
+    armor: 0

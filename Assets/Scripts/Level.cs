@@ -120,10 +120,10 @@ public class Level : MonoBehaviour
             case UpgradeType.ItemUpgrade:
                 passiveItems.upgradeItem(upgradeData);
                 break;
-            case UpgradeType.WeaponUnlock:
+            case UpgradeType.WeaponGet:
                 weaponManager.AddWeapon(upgradeData.weaponData);
                 break;
-            case UpgradeType.ItemUnlock:
+            case UpgradeType.ItemGet:
                 passiveItems.Equip(upgradeData.item);
                 AddUpgradableToListOfAllAvailableUpgrades(upgradeData.item.upgrades);
                 break;

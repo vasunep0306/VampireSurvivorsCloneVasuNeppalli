@@ -9,8 +9,8 @@ public enum UpgradeType
 {
     WeaponUpgrade, // An upgrade that improves the stats of a weapon.
     ItemUpgrade, // An upgrade that improves the stats of an item.
-    WeaponUnlock, // An upgrade that unlocks a new weapon.
-    ItemUnlock // An upgrade that unlocks a new item.
+    WeaponGet, // An upgrade that unlocks a new weapon.
+    ItemGet // An upgrade that unlocks a new item.
 }
 
 
