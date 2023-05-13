@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class EnemiesManager : MonoBehaviour
 {
+    // Declares variables for the enemy game object, its animation, the spawn area size, and the spawn timer duration.
     public GameObject enemy;
+    public GameObject enemyAnimation;
     public Vector2 spawnArea;
     public float spawnTimer;
 
-
+    // Declares variables for the player game object and its character component.
     private GameObject player;
     private Character playerCharacter;
 
@@ -38,10 +40,16 @@ public class EnemiesManager : MonoBehaviour
     {
         Vector3 position = GenerateRandomPosition();
 
+        // Creates a new enemy instance at the given position, sets its target to the player, and makes it a child of this object.
         GameObject newEnemy = Instantiate(enemy);
         newEnemy.transform.position = position;
         newEnemy.GetComponent<Enemy>().SetTarget(player.transform, playerCharacter);
         newEnemy.transform.parent = transform;
+
+        // Creates a new sprite object for the enemy animation and makes it a child of the new enemy.
+        GameObject spriteObject = Instantiate(enemyAnimation);
+        spriteObject.transform.parent = newEnemy.transform;
+        spriteObject.transform.localPosition = Vector3.zero;
     }
 
 

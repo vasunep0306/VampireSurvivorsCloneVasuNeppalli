@@ -33,7 +33,7 @@ public class PassiveItem : MonoBehaviour
         }
 
         // Creates a new item instance with the same name and stats as the item to equip.
-        Item newItemInstance = new Item();
+        Item newItemInstance = ScriptableObject.CreateInstance<Item>();
         newItemInstance.Init(itemToEquip.Name);
         newItemInstance.stats.Sum(itemToEquip.stats);
 
