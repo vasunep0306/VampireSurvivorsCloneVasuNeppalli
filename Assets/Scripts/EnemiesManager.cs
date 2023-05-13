@@ -43,7 +43,9 @@ public class EnemiesManager : MonoBehaviour
         // Creates a new enemy instance at the given position, sets its target to the player, and makes it a child of this object.
         GameObject newEnemy = Instantiate(enemy);
         newEnemy.transform.position = position;
-        newEnemy.GetComponent<Enemy>().SetTarget(player.transform, playerCharacter);
+        Enemy newEnemyComponent = newEnemy.GetComponent<Enemy>();
+        newEnemyComponent.SetTarget(player.transform, playerCharacter);
+        newEnemyComponent.SetStats(enemyToSpawn.stats);
         newEnemy.transform.parent = transform;
 
         // Creates a new sprite object for the enemy animation and makes it a child of the new enemy.

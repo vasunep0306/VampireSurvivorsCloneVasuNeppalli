@@ -14,3 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Pumpkin
   animatedPrefab: {fileID: 6457291116873088818, guid: 749f4070b0a20174986d9fed4918354f, type: 3}
+  stats:
+    hp: 10
+    damage: 1
+    experience_reward: 400
+    moveSpeed: 1
