@@ -31,7 +31,7 @@ public class StageEventManager : MonoBehaviour
     {
         for (int i = 0; i < stageData.stageEvents[eventIndexer].count; i++)
         {
-            enemiesManager.SpawnEnemy();
+            enemiesManager.SpawnEnemy(stageData.stageEvents[eventIndexer].enemyToSpawn);
         }
     }
 }

@@ -7,7 +7,7 @@ public class EnemiesManager : MonoBehaviour
 {
     // Declares variables for the enemy game object, its animation, the spawn area size, and the spawn timer duration.
     public GameObject enemy;
-    public GameObject enemyAnimation;
+    //public GameObject enemyAnimation;
     public Vector2 spawnArea;
     public float spawnTimer;
 
@@ -36,7 +36,7 @@ public class EnemiesManager : MonoBehaviour
     /// <summary>
     /// Spawns an enemy game object at a randomly generated position and sets the player as the enemy's target.
     /// </summary>
-    public void SpawnEnemy()
+    public void SpawnEnemy(EnemyData enemyToSpawn)
     {
         Vector3 position = GenerateRandomPosition();
 
@@ -47,7 +47,7 @@ public class EnemiesManager : MonoBehaviour
         newEnemy.transform.parent = transform;
 
         // Creates a new sprite object for the enemy animation and makes it a child of the new enemy.
-        GameObject spriteObject = Instantiate(enemyAnimation);
+        GameObject spriteObject = Instantiate(enemyToSpawn.animatedPrefab);
         spriteObject.transform.parent = newEnemy.transform;
         spriteObject.transform.localPosition = Vector3.zero;
     }
