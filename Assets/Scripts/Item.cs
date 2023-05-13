@@ -1,14 +1,32 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
+public class ItemStats
+{
+    public int armor;
+
+    public void Sum(ItemStats stats)
+    {
+        armor += stats.armor;
+    }
+}
 
 [CreateAssetMenu]
 public class Item : ScriptableObject
 {
     public string Name;
-    public int armor;
+    public ItemStats stats;
+    public List<UpgradeData> upgrades;
 
+    public void Init(string Name)
+    {
+        this.Name = Name;
+        stats = new ItemStats();
+        upgrades = new List<UpgradeData>();
+    }
 
     /// <summary>
     /// Equips the item to the character by adding the item's armor value to the character's armor.
@@ -16,7 +34,7 @@ public class Item : ScriptableObject
     /// <param name="character">The character to equip the item to.</param>
     public void Equip(Character character)
     {
-        character.armor += armor;
+        character.armor += stats.armor;
     }
 
     /// <summary>
@@ -25,6 +43,6 @@ public class Item : ScriptableObject
     /// <param name="character">The character to unequip the item from.</param>
     public void UnEquip(Character character)
     {
-        character.armor -= armor;
+        character.armor -= stats.armor;
     }
 }

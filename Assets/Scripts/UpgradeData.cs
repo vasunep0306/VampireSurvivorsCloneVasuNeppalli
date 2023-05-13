@@ -26,4 +26,8 @@ public class UpgradeData : ScriptableObject
 
     public WeaponData weaponData; // The data of the weapon to be upgraded or unlocked.
     public WeaponsStats weaponUpgradeStats; // The stats of the weapon to be added or improved.
+
+
+    public Item item;
+    public ItemStats itemStats;
 }

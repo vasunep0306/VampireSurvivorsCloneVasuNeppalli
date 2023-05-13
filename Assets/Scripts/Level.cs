@@ -10,10 +10,12 @@ public class Level : MonoBehaviour
     private int level = 1;
     private int experience = 0;
     public WeaponManager weaponManager;
+    public PassiveItem passiveItems;
 
     public List<UpgradeData> upgrades;
     List<UpgradeData> selectedUpgrades;
     [SerializeField] List<UpgradeData> acquiredUpgrades;
+    [SerializeField] List<UpgradeData> upgradesAvailableOnStart;
 
     int TO_LEVEL_UP
     {
@@ -23,14 +25,25 @@ public class Level : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        if(passiveItems == null) { passiveItems = GetComponent<PassiveItem>(); }
+    }
+
     private void Start()
     {
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
         experienceBar.SetLevelText(level);
+        AddUpgradableToListOfAllAvailableUpgrades(upgradesAvailableOnStart);
     }
 
+    /// <summary>
+    ///  Adds a list of upgrade data objects to the existing list of upgrades for this object, if the list is not null. 
+    /// </summary>
+    /// <param name="upgradesToAdd">The list of upgrade data objects to be added, or null to skip.</param>
     public void AddUpgradableToListOfAllAvailableUpgrades(List<UpgradeData> upgradesToAdd)
     {
+        if(upgradesToAdd == null) { return; }
         this.upgrades.AddRange(upgradesToAdd);
     }
 
@@ -105,11 +118,14 @@ public class Level : MonoBehaviour
                 weaponManager.UpgradeWeapon(upgradeData);
                 break;
             case UpgradeType.ItemUpgrade:
+                passiveItems.upgradeItem(upgradeData);
                 break;
             case UpgradeType.WeaponUnlock:
                 weaponManager.AddWeapon(upgradeData.weaponData);
                 break;
             case UpgradeType.ItemUnlock:
+                passiveItems.Equip(upgradeData.item);
+                AddUpgradableToListOfAllAvailableUpgrades(upgradeData.item.upgrades);
                 break;
         }
 

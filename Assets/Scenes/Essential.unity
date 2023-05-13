@@ -4794,6 +4794,14 @@ PrefabInstance:
       propertyPath: upgrades.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 653925994, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
+      propertyPath: upgradesAvailableOnStart.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 653925994, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
+      propertyPath: upgradesAvailableOnStart.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d52760a55754144b91c6fe5f1a3f591, type: 2}
     - target: {fileID: 653925999, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
       propertyPath: data
       value: 
@@ -4802,6 +4810,10 @@ PrefabInstance:
       propertyPath: coinText
       value: 
       objectReference: {fileID: 628934631}
+    - target: {fileID: 653926000, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 653926001, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
       propertyPath: gameOverPanel
       value: 
