@@ -25,8 +25,7 @@ public class DropAndDestroy : MonoBehaviour
         if(Random.value < chance)
         {
             GameObject toDrop = dropItemPrefab[Random.Range(0, dropItemPrefab.Count)];
-            Transform t = Instantiate(toDrop).transform;
-            t.position = transform.position;
+            SpawnManager.instance.SpawnObject(transform.position, toDrop);
         }
     }
 }

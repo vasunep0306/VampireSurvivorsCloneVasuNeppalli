@@ -19,6 +19,7 @@ public class StageEvent
     public float time; // The time (in seconds) when the event occurs
     public string message; // The message to display when the event occurs
     public EnemyData enemyToSpawn; // The enemy data to use for spawning an enemy (only used for SpawnEnemy events)
+    public GameObject objectToSpawn; // The game object to use for spawning an object (only used for SpawnObject events)
     public int count; // The number of enemies or objects to spawn (only used for SpawnEnemy and SpawnObject events)
 }
 
@@ -28,4 +29,3 @@ public class StageData : ScriptableObject
 {
     public List<StageEvent> stageEvents; // The list of stage events
 }
-
