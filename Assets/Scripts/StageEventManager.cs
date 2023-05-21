@@ -27,6 +27,7 @@ public class StageEventManager : MonoBehaviour
                     SpawnEnemies();
                     break;
                 case StageEventType.SpawnObject:
+                    SpawnObjects();
                     break;
                 case StageEventType.WinStage:
                     break;
@@ -35,6 +36,19 @@ public class StageEventManager : MonoBehaviour
             Debug.Log(stageData.stageEvents[eventIndexer].message);
             
             eventIndexer += 1;
+        }
+    }
+
+    private void SpawnObjects()
+    {
+        for (int i = 0; i < stageData.stageEvents[eventIndexer].count; i++)
+        {
+            Vector3 positionToSpawn = GameManager.instance.playerTransform.position;
+            positionToSpawn += UtilityTools.GenerateRandomPositionSquarePattern(new Vector2(5f, 5f));
+            SpawnManager.instance.SpawnObject(
+               positionToSpawn,
+                stageData.stageEvents[eventIndexer].objectToSpawn
+               );
         }
     }
 

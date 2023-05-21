@@ -13,15 +13,9 @@ MonoBehaviour:
   m_Name: Stage1 Data
   m_EditorClassIdentifier: 
   stageEvents:
-  - time: 5
-    message: This is 5 seconds
-    enemyToSpawn: {fileID: 11400000, guid: eb8b4e1b1d7f961418e00034450d5a81, type: 2}
-    count: 5
-  - time: 10
-    message: This is 10 seconds
-    enemyToSpawn: {fileID: 11400000, guid: eb8b4e1b1d7f961418e00034450d5a81, type: 2}
-    count: 10
-  - time: 15
-    message: This is 15 seconds
-    enemyToSpawn: {fileID: 11400000, guid: b72d8f640fa5e124b82db061cb41b33d, type: 2}
+  - eventType: 1
+    time: 5
+    message: Spawning Some Goodies
+    enemyToSpawn: {fileID: 0}
+    objectToSpawn: {fileID: 2144819854869967252, guid: 9e91cd68fc4ecfd479245a56e2386fe9, type: 3}
     count: 15

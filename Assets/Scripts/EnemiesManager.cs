@@ -38,7 +38,7 @@ public class EnemiesManager : MonoBehaviour
     /// </summary>
     public void SpawnEnemy(EnemyData enemyToSpawn)
     {
-        Vector3 position = GenerateRandomPosition();
+        Vector3 position = UtilityTools.GenerateRandomPositionSquarePattern(spawnArea);
 
         // Creates a new enemy instance at the given position, sets its target to the player, and makes it a child of this object.
         GameObject newEnemy = Instantiate(enemy);

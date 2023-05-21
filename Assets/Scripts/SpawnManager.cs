@@ -20,7 +20,7 @@ public class SpawnManager : MonoBehaviour
     /// <param name="toSpawn">The game object to spawn</param>
     public void SpawnObject(Vector3 worldPosition, GameObject toSpawn)
     {
-        Transform t = Instantiate(toSpawn).transform; // Creates a new instance of the object and gets its transform component
+        Transform t = Instantiate(toSpawn, transform).transform; // Creates a new instance of the object and gets its transform component
         t.position = worldPosition; // Sets the position of the transform to the world position
     }
 }
