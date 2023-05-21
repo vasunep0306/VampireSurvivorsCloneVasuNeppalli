@@ -50,6 +50,7 @@ public class ThrowingKnifeProjectile : MonoBehaviour
                 Enemy enemy = c.GetComponent<Enemy>();
                 if (enemy != null)
                 {
+                    PostDamage(damage, transform.position);
                     enemy.TakeDamage(damage);
                     hitDetected = true;
                     break;
@@ -67,4 +68,14 @@ public class ThrowingKnifeProjectile : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    /// <summary>
+    /// Posts a damage message to the MessageSystem instance. 
+    /// </summary>
+    /// <param name="damage">The amount of damage to display.</param>
+    /// <param name="worldPosition">The world position of the message.</param>
+    public void PostDamage(int damage, Vector3 worldPosition)
+    {
+        MessageSystem.instance.PostMessage(damage.ToString(), worldPosition);
+    }    
 }
