@@ -18,4 +18,4 @@ MonoBehaviour:
     message: Spawning Some Goodies
     enemyToSpawn: {fileID: 0}
     objectToSpawn: {fileID: 2144819854869967252, guid: 9e91cd68fc4ecfd479245a56e2386fe9, type: 3}
-    count: 15
+    count: 1
