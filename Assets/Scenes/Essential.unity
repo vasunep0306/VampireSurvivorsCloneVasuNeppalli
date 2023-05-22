@@ -2241,6 +2241,7 @@ GameObject:
   - component: {fileID: 834764219}
   - component: {fileID: 834764220}
   - component: {fileID: 834764221}
+  - component: {fileID: 834764222}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2322,6 +2323,21 @@ MonoBehaviour:
   - {fileID: 734788942}
   - {fileID: 960927613}
   - {fileID: 1419824774}
+--- !u!114 &834764222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834764216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2089aa11668afb84a82e35b0c98dab6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winMessagePanel: {fileID: 1123653989}
+  pauseManager: {fileID: 834764220}
+  dataContainer: {fileID: 11400000, guid: c886e5e7bf9ce544681ac938fe124c24, type: 2}
 --- !u!1 &930535942
 GameObject:
   m_ObjectHideFlags: 0
@@ -2950,7 +2966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.23529413, g: 0.23529413, b: 0.23529413, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
