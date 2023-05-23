@@ -7,6 +7,7 @@ using UnityEngine;
 public enum StageEventType
 {
     SpawnEnemy, // Spawn an enemy or a group of enemies
+    SpawnEnemyBoss, // Spawn an enemy boss or a group of enemy bosses with special abilities
     SpawnObject, // Spawn an object or a group of objects
     WinStage // Win the stage and proceed to the next one
 }

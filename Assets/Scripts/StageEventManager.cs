@@ -36,6 +36,9 @@ public class StageEventManager : MonoBehaviour
                 case StageEventType.SpawnObject:
                     SpawnObjects();
                     break;
+                case StageEventType.SpawnEnemyBoss:
+                    SpawnEnemyBoss();
+                    break;
                 case StageEventType.WinStage:
                     WinStage();
                     break;
@@ -45,6 +48,11 @@ public class StageEventManager : MonoBehaviour
             
             eventIndexer += 1;
         }
+    }
+
+    private void SpawnEnemyBoss()
+    {
+        throw new NotImplementedException();
     }
 
     private void WinStage()
