@@ -15,13 +15,13 @@ MonoBehaviour:
   stageEvents:
   - eventType: 1
     time: 5
-    message: Spawning Some Goodies
-    enemyToSpawn: {fileID: 0}
-    objectToSpawn: {fileID: 2144819854869967252, guid: 9e91cd68fc4ecfd479245a56e2386fe9, type: 3}
-    count: 1
-  - eventType: 2
-    time: 10
-    message: You won the stage!
-    enemyToSpawn: {fileID: 0}
+    message: 
+    enemyToSpawn: {fileID: 11400000, guid: eb8b4e1b1d7f961418e00034450d5a81, type: 2}
     objectToSpawn: {fileID: 0}
     count: 1
+  - eventType: 3
+    time: 30
+    message: You Win!
+    enemyToSpawn: {fileID: 11400000, guid: eb8b4e1b1d7f961418e00034450d5a81, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 0

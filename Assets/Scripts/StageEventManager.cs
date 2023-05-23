@@ -31,7 +31,7 @@ public class StageEventManager : MonoBehaviour
             switch (stageData.stageEvents[eventIndexer].eventType)
             {
                 case StageEventType.SpawnEnemy:
-                    SpawnEnemies();
+                    SpawnEnemies(false);
                     break;
                 case StageEventType.SpawnObject:
                     SpawnObjects();
@@ -52,7 +52,7 @@ public class StageEventManager : MonoBehaviour
 
     private void SpawnEnemyBoss()
     {
-        throw new NotImplementedException();
+        SpawnEnemies(true);
     }
 
     private void WinStage()
@@ -76,11 +76,11 @@ public class StageEventManager : MonoBehaviour
     /// <summary>
     /// Spawns a number of enemies based on the current stage event
     /// </summary>
-    private void SpawnEnemies()
+    private void SpawnEnemies(bool isBoss)
     {
         for (int i = 0; i < stageData.stageEvents[eventIndexer].count; i++)
         {
-            enemiesManager.SpawnEnemy(stageData.stageEvents[eventIndexer].enemyToSpawn);
+            enemiesManager.SpawnEnemy(stageData.stageEvents[eventIndexer].enemyToSpawn, isBoss);
         }
     }
 
