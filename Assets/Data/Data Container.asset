@@ -12,5 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef31bb527d74ad4cb9c467a680da2bd, type: 3}
   m_Name: Data Container
   m_EditorClassIdentifier: 
-  coins: 0
+  coins: 1024
   stageCompletion: 0000
+  upgrades:
+  - playerPersistentUpgrades: 0
+    level: 0
+    costToUpgrade: 100
+  - playerPersistentUpgrades: 1
+    level: 0
+    costToUpgrade: 100
