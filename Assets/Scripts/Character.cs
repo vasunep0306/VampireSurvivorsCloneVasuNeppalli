@@ -5,17 +5,23 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    public DataContainer dataContainer;
+    // Declare variables for maximum health, current health and health bar UI element
     public int maxHp = 1000;
     public int currentHp = 1000;
     public StatusBar hpBar;
 
     public int armor = 0;
 
+    // Declare variables for level and coins objects
     public Level level;
     public Coins coins;
 
+    // Declare variables for health regeneration rate per second and timer for regeneration
     public float hpRegenerationRate = 1f;
     public float hpRegenerationTimer;
+
+    public float damageBonus;
 
 
     public GameOver gameOver;
@@ -24,15 +30,28 @@ public class Character : MonoBehaviour
 
     private void Start()
     {
+        ApplyPersistantUpgrades();
         hpBar.SetState(currentHp, maxHp);
         coins.Add(0);
+    }
+
+    private void ApplyPersistantUpgrades()
+    {
+        // Get the upgrade level for health from the data container and increase the maximum and current health accordingly
+        int hpUpgradeLevel = dataContainer.GetUpgradeLevel(PlayerPersistentUpgrades.HP);
+        maxHp += maxHp / 10 * hpUpgradeLevel;
+        currentHp += maxHp;
+
+        // Get the upgrade level for damage from the data container and calculate the damage bonus factor
+        int damageUpgradeLevel = dataContainer.GetUpgradeLevel(PlayerPersistentUpgrades.DAMAGE);
+        damageBonus = 1f + 0.1f * damageUpgradeLevel;
     }
 
     private void Update()
     {
         hpRegenerationTimer += Time.deltaTime * hpRegenerationRate;
-
-        if(hpRegenerationTimer > 1f)
+        // If the regeneration timer is greater than one second, heal one point of health and reduce the timer by one second
+        if (hpRegenerationTimer > 1f)
         {
             Heal(1);
             hpRegenerationTimer -= 1f;

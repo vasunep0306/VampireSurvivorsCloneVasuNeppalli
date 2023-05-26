@@ -5053,6 +5053,10 @@ PrefabInstance:
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 27513700}
+    - target: {fileID: 45510072456874683, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
+      propertyPath: dataContainer
+      value: 
+      objectReference: {fileID: 11400000, guid: c886e5e7bf9ce544681ac938fe124c24, type: 2}
     - target: {fileID: 2753633733442881713, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5101,6 +5105,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 2753633733468743787, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 653925993}
     - target: {fileID: 2753633733468743787, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
       propertyPath: startingWeapon
       value: 

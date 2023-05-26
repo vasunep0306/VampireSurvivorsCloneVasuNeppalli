@@ -9,7 +9,16 @@ public abstract class WeaponBase : MonoBehaviour
 
     public WeaponsStats weaponsStats;
 
+    private Character wielder;
+
     float timer;
+    
+
+    public int GetDamage()
+    {
+        int damage = (int)(weaponData.stats.damage * wielder.damageBonus);
+        return damage;
+    }
 
     public void Update()
     {
@@ -40,5 +49,10 @@ public abstract class WeaponBase : MonoBehaviour
     public void Upgrade(UpgradeData upgradeData)
     {
         weaponsStats.Sum(upgradeData.weaponUpgradeStats);
+    }
+
+    public void AddOwnerCharacter(Character character)
+    {
+        wielder = character;
     }
 }

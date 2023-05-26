@@ -31,4 +31,9 @@ public class DataContainer : ScriptableObject
     {
         stageCompletion[i] = true;
     }
+
+    public int GetUpgradeLevel(PlayerPersistentUpgrades persistentUpgrade)
+    {
+        return upgrades[(int)persistentUpgrade].level;
+    }
 }

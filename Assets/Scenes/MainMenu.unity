@@ -2334,7 +2334,7 @@ GameObject:
   - component: {fileID: 1707617029}
   - component: {fileID: 1707617031}
   m_Layer: 5
-  m_Name: Upgrade UI Element
+  m_Name: Upgrade UI Element Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2571,7 +2571,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1750716916
 RectTransform:
   m_ObjectHideFlags: 0

@@ -8,11 +8,15 @@ public class WeaponManager : MonoBehaviour
     public Transform weaponObjectsContainer;
     public WeaponData startingWeapon;
 
+    public Character character;
+
     List<WeaponBase> weapons;
+    
 
     private void Awake()
     {
         weapons = new List<WeaponBase>();
+        if(character==null) { character = GetComponent<Character>(); }
     }
 
     private void Start()
@@ -34,6 +38,7 @@ public class WeaponManager : MonoBehaviour
         weaponBase.SetData(weaponData);
 
         weapons.Add(weaponBase);
+        weaponBase.AddOwnerCharacter(character);
 
         Level level =  GetComponent<Level>();
         if(level != null)
