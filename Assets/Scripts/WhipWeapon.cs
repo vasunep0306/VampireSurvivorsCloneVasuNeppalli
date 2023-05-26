@@ -23,19 +23,7 @@ public class WhipWeapon : WeaponBase
 
     
 
-    private void ApplyDamage(Collider2D[] colliders)
-    {
-        int damage = GetDamage();
-        for(int i=0; i< colliders.Length; i++)
-        {
-            IDamagable e = colliders[i].GetComponent<IDamagable>();
-            if (e != null)
-            {
-                PostMessage(damage, colliders[i].transform.position);
-                e.TakeDamage(damage);
-            }
-        }
-    }
+   
 
     public override void Attack()
     {

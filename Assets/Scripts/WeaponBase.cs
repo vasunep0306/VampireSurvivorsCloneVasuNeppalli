@@ -31,6 +31,21 @@ public abstract class WeaponBase : MonoBehaviour
         }
     }
 
+
+    public void ApplyDamage(Collider2D[] colliders)
+    {
+        int damage = GetDamage();
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            IDamagable e = colliders[i].GetComponent<IDamagable>();
+            if (e != null)
+            {
+                PostMessage(damage, colliders[i].transform.position);
+                e.TakeDamage(damage);
+            }
+        }
+    }
+
     public abstract void Attack();
 
     public virtual void SetData(WeaponData wd)
