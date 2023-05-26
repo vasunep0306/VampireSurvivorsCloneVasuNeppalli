@@ -6,13 +6,9 @@ using UnityEngine;
 public class ThrowingKnife : WeaponBase
 {
     public GameObject knifePrefab;
-    public PlayerMove playerMove;
     public float spread = 0.5f;
 
-    private void Awake()
-    {
-        if (playerMove == null) { playerMove = GetComponentInParent<PlayerMove>(); }
-    }
+   
 
 
     /// <summary>
@@ -23,6 +19,7 @@ public class ThrowingKnife : WeaponBase
     /// </remarks>
     public override void Attack()
     {
+        UpdateVectorOfAttack();
         for(int i = 0; i < weaponsStats.numberOfAttacks; i++)
         {
             GameObject throwKnife = Instantiate(knifePrefab);
@@ -36,7 +33,7 @@ public class ThrowingKnife : WeaponBase
             throwKnife.transform.position = newKnifePosition;
 
             ThrowingKnifeProjectile throwingKnifeProjectile = throwKnife.GetComponent<ThrowingKnifeProjectile>();
-            throwingKnifeProjectile.SetDirection(playerMove.lastHorizontalVector, 0f);
+            throwingKnifeProjectile.SetDirection(vectorOfAttack.x, vectorOfAttack.y);
             throwingKnifeProjectile.damage = GetDamage();
         }
     }

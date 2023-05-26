@@ -11,9 +11,14 @@ public class PlayerMove : MonoBehaviour
     public Animate animate;
 
     [HideInInspector]
-    public float lastHorizontalVector;
+    public float lastHorizontalDecoupledVector;
     [HideInInspector]
-    public float lastVerticalVector;
+    public float lastVerticalDecoupledVector;
+
+    [HideInInspector]
+    public float lastHorizontalCoupledVector;
+    [HideInInspector]
+    public float lastVerticalCoupledVector;
 
     [HideInInspector]
     public Vector3 movementVector;
@@ -25,8 +30,11 @@ public class PlayerMove : MonoBehaviour
 
     private void Start()
     {
-        lastHorizontalVector = -1f;
-        lastVerticalVector = 1f;
+        lastHorizontalDecoupledVector = -1f;
+        lastVerticalDecoupledVector = 1f;
+
+        lastHorizontalCoupledVector = -1f;
+        lastVerticalCoupledVector = 1f;
     }
 
     // Update is called once per frame
@@ -35,7 +43,8 @@ public class PlayerMove : MonoBehaviour
         movementVector.x = Input.GetAxisRaw("Horizontal");
         movementVector.y = Input.GetAxisRaw("Vertical");
 
-        PopulateLastMovement();
+        PopulateLastCoupledMovement();
+        PopulateLastDecoupledMovement();
 
         animate.horizontal = movementVector.x;
 
@@ -44,19 +53,28 @@ public class PlayerMove : MonoBehaviour
         rb.velocity = movementVector * Time.deltaTime; // In this example, we multiply our movementVector with Time.deltaTime to make our game frame rate independent.
     }
 
+    private void PopulateLastCoupledMovement()
+    {
+        if (movementVector.x != 0 || movementVector.y != 0)
+        {
+            lastHorizontalCoupledVector = movementVector.x;
+            lastVerticalCoupledVector = movementVector.y;
+        }
+    }
+
 
     /// <summary>
     /// Updates the last horizontal and vertical movement values based on the current movement vector.
     /// </summary>
-    private void PopulateLastMovement()
+    private void PopulateLastDecoupledMovement()
     {
         if (movementVector.x != 0)
         {
-            lastHorizontalVector = movementVector.x;
+            lastHorizontalDecoupledVector = movementVector.x;
         }
         if(movementVector.y != 0)
         {
-            lastVerticalVector = movementVector.y;
+            lastVerticalDecoupledVector = movementVector.y;
         }
     }
 }
