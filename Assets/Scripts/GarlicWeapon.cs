@@ -9,5 +9,6 @@ public class GarlicWeapon : WeaponBase
     public override void Attack()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, attackAreaSize);
+        ApplyDamage(colliders);
     }
 }
