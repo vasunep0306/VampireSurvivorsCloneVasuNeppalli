@@ -5025,38 +5025,14 @@ PrefabInstance:
       propertyPath: experienceBar
       value: 
       objectReference: {fileID: 1666400713}
-    - target: {fileID: 653925994, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
-      propertyPath: upgrades.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 653925994, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
-      propertyPath: upgradesAvailableOnStart.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 653925994, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
-      propertyPath: upgradesAvailableOnStart.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 5d52760a55754144b91c6fe5f1a3f591, type: 2}
-    - target: {fileID: 653925999, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
-      propertyPath: data
-      value: 
-      objectReference: {fileID: 11400000, guid: c886e5e7bf9ce544681ac938fe124c24, type: 2}
     - target: {fileID: 653925999, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
       propertyPath: coinText
       value: 
       objectReference: {fileID: 628934631}
-    - target: {fileID: 653926000, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 653926001, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 27513700}
-    - target: {fileID: 45510072456874683, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
-      propertyPath: dataContainer
-      value: 
-      objectReference: {fileID: 11400000, guid: c886e5e7bf9ce544681ac938fe124c24, type: 2}
     - target: {fileID: 2753633733442881713, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5106,12 +5082,8 @@ PrefabInstance:
       value: PlayerCharacter
       objectReference: {fileID: 0}
     - target: {fileID: 2753633733468743787, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
-      propertyPath: character
-      value: 
-      objectReference: {fileID: 653925993}
-    - target: {fileID: 2753633733468743787, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
       propertyPath: startingWeapon
       value: 
-      objectReference: {fileID: 11400000, guid: b8a9c11a4b909ad49b8ce880096d6913, type: 2}
+      objectReference: {fileID: 11400000, guid: 4fea62368c3d9fb4fb115425bf12786d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efcac3b6c7ed6324dbb615f1f87dc5ff, type: 3}
