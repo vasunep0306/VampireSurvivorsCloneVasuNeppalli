@@ -234,12 +234,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6829fddaa3ab88c4a979645e54657a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataContainer: {fileID: 11400000, guid: c886e5e7bf9ce544681ac938fe124c24, type: 2}
   maxHp: 1000
   currentHp: 1000
   hpBar: {fileID: 1561339142647261391}
   armor: 0
   level: {fileID: 653925994}
   coins: {fileID: 653925999}
+  hpRegenerationRate: 1
+  hpRegenerationTimer: 0
+  damageBonus: 0
   gameOver: {fileID: 653926001}
 --- !u!114 &653925994
 MonoBehaviour:
@@ -256,8 +260,11 @@ MonoBehaviour:
   experienceBar: {fileID: 0}
   upm: {fileID: 0}
   weaponManager: {fileID: 2753633733468743787}
+  passiveItems: {fileID: 0}
   upgrades: []
   acquiredUpgrades: []
+  upgradesAvailableOnStart:
+  - {fileID: 11400000, guid: 5d52760a55754144b91c6fe5f1a3f591, type: 2}
 --- !u!114 &653925999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,7 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d233b81181be4334fa642faa03e62bf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinAcquired: 0
+  data: {fileID: 11400000, guid: c886e5e7bf9ce544681ac938fe124c24, type: 2}
   coinText: {fileID: 0}
 --- !u!114 &653926000
 MonoBehaviour:
@@ -279,14 +286,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2753633733442881726}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75bf74158c4968b45be332afca698d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
   character: {fileID: 45510072456874683}
-  testArmor: {fileID: 11400000, guid: 2f3c9845ec99c6c42b7c5f9cac7c3987, type: 2}
 --- !u!114 &653926001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,7 +321,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponObjectsContainer: {fileID: 7014386827953869345}
-  startingWeapon: {fileID: 11400000, guid: d03576ed5dfa6d343879e405615a19bf, type: 2}
+  startingWeapon: {fileID: 11400000, guid: b8a9c11a4b909ad49b8ce880096d6913, type: 2}
+  character: {fileID: 45510072456874683}
 --- !u!1 &2753633734286610814
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +544,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &6657970860979603350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6171633051969259988}
+  m_Layer: 0
+  m_Name: wpn_Garlic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6171633051969259988
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6657970860979603350}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7014386827953869345}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9067721950862249689
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +602,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6171633051969259988}
   m_Father: {fileID: 2753633733442881713}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
