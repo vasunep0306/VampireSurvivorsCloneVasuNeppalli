@@ -71,6 +71,9 @@ public class EnemiesManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Updates the boss health bar based on the total health of all boss enemies in the list
+    /// </summary>
     private void UpdateBossHealth()
     {
         if (bossEnemiesList == null) { return; }
@@ -116,29 +119,33 @@ public class EnemiesManager : MonoBehaviour
     /// </summary>
     public void SpawnEnemy(EnemyData enemyToSpawn, bool isBoss)
     {
+        // Generate a random position within the spawn area using a square pattern
         Vector3 position = UtilityTools.GenerateRandomPositionSquarePattern(spawnArea);
-
-        // Creates a new enemy instance at the given position, sets its target to the player, and makes it a child of this object.
+        // Create a new enemy game object from the prefab and get its Enemy component
         GameObject newEnemy = Instantiate(enemy);
         newEnemy.transform.position = position;
         Enemy newEnemyComponent = newEnemy.GetComponent<Enemy>();
+        // Initialize the enemy's target, stats, and difficulty based on the player and the stage progress
         newEnemyComponent.SetTarget(player.transform, playerCharacter);
         newEnemyComponent.SetStats(enemyToSpawn.stats);
         newEnemyComponent.UpdateStatsForProgress(stageProgress.Progress);
-
-        if(isBoss)
+        // Add the enemy to the boss list if it is a boss and set its parent to this object
+        if (isBoss)
         {
             SpawnBossEnemy(newEnemyComponent);
         }
 
         newEnemy.transform.parent = transform;
-
         // Creates a new sprite object for the enemy animation and makes it a child of the new enemy.
         GameObject spriteObject = Instantiate(enemyToSpawn.animatedPrefab);
         spriteObject.transform.parent = newEnemy.transform;
         spriteObject.transform.localPosition = Vector3.zero;
     }
 
+    /// <summary>
+    /// Adds a new boss enemy to the list and updates the boss health bar accordingly
+    /// </summary>
+    /// <param name="newBoss">The new boss enemy to be added</param>
     private void SpawnBossEnemy(Enemy newBoss)
     {
         if(bossEnemiesList == null) { bossEnemiesList = new List<Enemy>(); }
