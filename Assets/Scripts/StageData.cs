@@ -22,6 +22,10 @@ public class StageEvent
     public EnemyData enemyToSpawn; // The enemy data to use for spawning an enemy (only used for SpawnEnemy events)
     public GameObject objectToSpawn; // The game object to use for spawning an object (only used for SpawnObject events)
     public int count; // The number of enemies or objects to spawn (only used for SpawnEnemy and SpawnObject events)
+
+    public bool isRepeatedEvent; // Whether the event should be repeated after a certain interval
+    public float repeatEverySeconds; // The interval (in seconds) between each repetition of the event
+    public int repeatCount;
 }
 
 // A scriptable object that contains a list of stage events

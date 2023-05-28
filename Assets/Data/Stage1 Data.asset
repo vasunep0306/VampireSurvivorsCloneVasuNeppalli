@@ -19,57 +19,6 @@ MonoBehaviour:
     enemyToSpawn: {fileID: 11400000, guid: b72d8f640fa5e124b82db061cb41b33d, type: 2}
     objectToSpawn: {fileID: 0}
     count: 10
-  - eventType: 0
-    time: 10
-    message: 
-    enemyToSpawn: {fileID: 11400000, guid: eb8b4e1b1d7f961418e00034450d5a81, type: 2}
-    objectToSpawn: {fileID: 0}
-    count: 20
-  - eventType: 1
-    time: 30
-    message: 
-    enemyToSpawn: {fileID: 11400000, guid: eb8b4e1b1d7f961418e00034450d5a81, type: 2}
-    objectToSpawn: {fileID: 0}
-    count: 1
-  - eventType: 3
-    time: 50
-    message: win
-    enemyToSpawn: {fileID: 0}
-    objectToSpawn: {fileID: 0}
-    count: 0
-  - eventType: 0
-    time: 0
-    message: 
-    enemyToSpawn: {fileID: 0}
-    objectToSpawn: {fileID: 0}
-    count: 0
-  - eventType: 0
-    time: 0
-    message: 
-    enemyToSpawn: {fileID: 0}
-    objectToSpawn: {fileID: 0}
-    count: 0
-  - eventType: 0
-    time: 0
-    message: 
-    enemyToSpawn: {fileID: 0}
-    objectToSpawn: {fileID: 0}
-    count: 0
-  - eventType: 0
-    time: 0
-    message: 
-    enemyToSpawn: {fileID: 0}
-    objectToSpawn: {fileID: 0}
-    count: 0
-  - eventType: 0
-    time: 0
-    message: 
-    enemyToSpawn: {fileID: 0}
-    objectToSpawn: {fileID: 0}
-    count: 0
-  - eventType: 0
-    time: 0
-    message: 
-    enemyToSpawn: {fileID: 0}
-    objectToSpawn: {fileID: 0}
-    count: 0
+    isRepeatedEvent: 1
+    repeatEverySeconds: 10
+    repeatCount: 25

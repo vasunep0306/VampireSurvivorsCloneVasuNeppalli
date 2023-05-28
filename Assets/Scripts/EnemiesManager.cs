@@ -6,15 +6,25 @@ using UnityEngine.UI;
 
 public class EnemiesSpawnGroup
 {
-    public EnemyData enemyData;
-    public int count;
-    public bool isBoss;
+    public EnemyData enemyData; // The data of the enemy to spawn
+    public int count; // The number of enemies to spawn at once
+    public bool isBoss; // Whether the enemy is a boss or not
+    public float repeatTimer; // The timer for repeating the spawn (only used if repeatCount > 0)
+    public float timeBetweenSpawn; // The time interval between each spawn repetition
+    public int repeatCount; // The number of times to repeat the spawn
 
     public EnemiesSpawnGroup(EnemyData enemyData,int count, bool isBoss)
     {
         this.enemyData = enemyData;
         this.count = count;
         this.isBoss = isBoss;
+    }
+
+    public void SetRepeatSpawn(float timeBetweenSpawn, int repeatCount)
+    {
+        this.timeBetweenSpawn = timeBetweenSpawn;
+        this.repeatCount = repeatCount;
+        repeatTimer = timeBetweenSpawn;
     }
 }
 
@@ -37,6 +47,7 @@ public class EnemiesManager : MonoBehaviour
     private int currentBossHealth;
 
     private List<EnemiesSpawnGroup> enemiesSpawnGroups;
+    private List<EnemiesSpawnGroup> repeatedSpawnGroupList;
 
 
     private void Start()
@@ -49,7 +60,30 @@ public class EnemiesManager : MonoBehaviour
     private void Update()
     {
         ProcessSpawn();
+        ProcessRepeatedSpawnGroup();
         UpdateBossHealth();
+    }
+
+    private void ProcessRepeatedSpawnGroup()
+    {
+        if(repeatedSpawnGroupList == null)
+        {
+            return;
+        }
+        for(int i = repeatedSpawnGroupList.Count - 1; i >= 0; i--)
+        {
+            repeatedSpawnGroupList[i].repeatTimer -= Time.deltaTime;
+            if(repeatedSpawnGroupList[i].repeatTimer < 0)
+            {
+                repeatedSpawnGroupList[i].repeatTimer = repeatedSpawnGroupList[i].timeBetweenSpawn;
+                AddGroupToSpawn(repeatedSpawnGroupList[i].enemyData, repeatedSpawnGroupList[i].count, repeatedSpawnGroupList[i].isBoss);
+                repeatedSpawnGroupList[i].repeatCount -= 1;
+                if(repeatedSpawnGroupList[i].repeatCount <=0 )
+                {
+                    repeatedSpawnGroupList.RemoveAt(i);
+                }
+            }
+        }
     }
 
     private void ProcessSpawn()
@@ -94,6 +128,8 @@ public class EnemiesManager : MonoBehaviour
             bossEnemiesList.Clear();
         }
     }
+
+    
 
     public void AddGroupToSpawn(EnemyData enemyToSpawn, int count, bool isBoss)
     {
@@ -181,5 +217,15 @@ public class EnemiesManager : MonoBehaviour
         }
         position.z = 0f;
         return position;
+    }
+
+    public void AddRepeatedSpawn(StageEvent stageEvent, bool isBoss)
+    {
+        EnemiesSpawnGroup repeatSpawnGroup = new EnemiesSpawnGroup(stageEvent.enemyToSpawn, stageEvent.count, isBoss);
+        repeatSpawnGroup.SetRepeatSpawn(stageEvent.repeatEverySeconds, stageEvent.repeatCount);
+
+        if(repeatedSpawnGroupList==null) { repeatedSpawnGroupList = new List<EnemiesSpawnGroup>(); }
+
+        repeatedSpawnGroupList.Add(repeatSpawnGroup);
     }
 }

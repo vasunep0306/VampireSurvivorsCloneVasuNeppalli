@@ -80,6 +80,11 @@ public class StageEventManager : MonoBehaviour
     {
         StageEvent currentEvent = stageData.stageEvents[eventIndexer];
         enemiesManager.AddGroupToSpawn(currentEvent.enemyToSpawn, currentEvent.count, isBoss);
+
+        if(currentEvent.isRepeatedEvent)
+        {
+            enemiesManager.AddRepeatedSpawn(currentEvent, isBoss);
+        }
     }
 
 
