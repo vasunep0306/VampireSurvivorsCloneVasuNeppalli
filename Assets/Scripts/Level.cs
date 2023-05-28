@@ -91,8 +91,20 @@ public class Level : MonoBehaviour
         experienceBar.SetLevelText(level);
     }
 
+    public void ShuffleUpgrades()
+    {
+        for(int i = upgrades.Count - 1; i > 0; i--)
+        {
+            int x = Random.Range(0, i + 1);
+            UpgradeData shuffleElement = upgrades[i];
+            upgrades[i] = upgrades[x];
+            upgrades[x] = shuffleElement;
+        }
+    }
+
     public List<UpgradeData> GetUpgrades(int count)
     {
+        ShuffleUpgrades();
         List<UpgradeData> upgradesList = new List<UpgradeData>();
         if(count > upgrades.Count)
         {
@@ -100,7 +112,7 @@ public class Level : MonoBehaviour
         }
         for(int i = 0; i < count; i++)
         {
-            upgradesList.Add(upgrades[Random.Range(0, upgrades.Count)]);
+            upgradesList.Add(upgrades[i]);
         }
         return upgradesList;
 

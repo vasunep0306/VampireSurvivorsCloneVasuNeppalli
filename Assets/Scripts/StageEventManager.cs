@@ -7,8 +7,8 @@ public class StageEventManager : MonoBehaviour
 {
     public StageData stageData;
     public StageTime stageTime;
-    public EnemiesManager enemiesManager;
 
+    private EnemiesManager enemiesManager;
     private int eventIndexer = 0;
     private PlayerWinManager win;
 
@@ -20,6 +20,7 @@ public class StageEventManager : MonoBehaviour
     private void Start()
     {
         win = FindObjectOfType<PlayerWinManager>();
+        enemiesManager = FindObjectOfType<EnemiesManager>();
     }
 
 
