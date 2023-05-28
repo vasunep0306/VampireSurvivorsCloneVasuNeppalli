@@ -78,10 +78,8 @@ public class StageEventManager : MonoBehaviour
     /// </summary>
     private void SpawnEnemies(bool isBoss)
     {
-        for (int i = 0; i < stageData.stageEvents[eventIndexer].count; i++)
-        {
-            enemiesManager.SpawnEnemy(stageData.stageEvents[eventIndexer].enemyToSpawn, isBoss);
-        }
+        StageEvent currentEvent = stageData.stageEvents[eventIndexer];
+        enemiesManager.AddGroupToSpawn(currentEvent.enemyToSpawn, currentEvent.count, isBoss);
     }
 
 

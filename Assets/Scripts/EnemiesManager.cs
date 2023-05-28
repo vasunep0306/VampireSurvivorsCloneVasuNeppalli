@@ -4,6 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public class EnemiesSpawnGroup
+{
+    public EnemyData enemyData;
+    public int count;
+    public bool isBoss;
+
+    public EnemiesSpawnGroup(EnemyData enemyData,int count, bool isBoss)
+    {
+        this.enemyData = enemyData;
+        this.count = count;
+        this.isBoss = isBoss;
+    }
+}
+
 public class EnemiesManager : MonoBehaviour
 {
     // Declares variables for the enemy game object, its animation, the spawn area size, and the spawn timer duration.
@@ -22,6 +36,7 @@ public class EnemiesManager : MonoBehaviour
     private int totalBossHealth;
     private int currentBossHealth;
 
+    private List<EnemiesSpawnGroup> enemiesSpawnGroups;
 
 
     private void Start()
@@ -33,7 +48,27 @@ public class EnemiesManager : MonoBehaviour
 
     private void Update()
     {
+        ProcessSpawn();
         UpdateBossHealth();
+    }
+
+    private void ProcessSpawn()
+    {
+        if(enemiesSpawnGroups == null)
+        {
+            return;
+        }
+
+        if(enemiesSpawnGroups.Count > 0)
+        {
+            SpawnEnemy(enemiesSpawnGroups[0].enemyData, enemiesSpawnGroups[0].isBoss);
+            enemiesSpawnGroups[0].count -= 1;
+
+            if(enemiesSpawnGroups[0].count <= 0)
+            {
+                enemiesSpawnGroups.RemoveAt(0);
+            }
+        }
     }
 
     private void UpdateBossHealth()
@@ -55,6 +90,15 @@ public class EnemiesManager : MonoBehaviour
             bossHealthBar.gameObject.SetActive(false);
             bossEnemiesList.Clear();
         }
+    }
+
+    public void AddGroupToSpawn(EnemyData enemyToSpawn, int count, bool isBoss)
+    {
+        EnemiesSpawnGroup newGroupToSpawn = new EnemiesSpawnGroup(enemyToSpawn, count, isBoss);
+        if(enemiesSpawnGroups == null) { enemiesSpawnGroups = new List<EnemiesSpawnGroup>(); }
+
+        enemiesSpawnGroups.Add(newGroupToSpawn);
+
     }
 
     //private void Update()
